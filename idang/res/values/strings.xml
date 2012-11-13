@@ -1,0 +1,215 @@
+<resources>
+
+    <string name="app_name">Idang</string>
+    <string name="category_title"> Cairo the SEAL Dog</string>
+    <string name="category_short_description">Cairo the military dog was born and bred for the job. He is a Belgian Malinois, a shepherd breed that few were familiar with, until Cairo’s story became news. After Cairo trained to be a Military Working Dog at a young age, he advanced to Navy SEAL training.</string>
+    <string name="story_sample">Our nation\'s newest four-pawed super-hero is a dog named Cairo. \
+And how much is a dog like him worth?
+This is a case of;  “If you have to ask- you can’t afford him”, nor would this Top Dog ever be for sale.
+Cairo is the hero-dog that accompanied SEAL Team 6 on their raid into the compound of Osama bin Laden in Abbottabad, Pakistan.
+Cairo was born and bred to be a Military Working Dog. That in itself puts his price tag at over $20,000.
+His puppyhood was spent in training to be a working dog. Following that, he was additionally trained to be a Navy SEAL-working dog.
+Like all super-heroes Cairo has a “cape”. In this case, the “cape” is technically customized body armor and it costs upwards of $30,000.
+Cairo’s specialized working gear is designed to make him bulletproof and while it doesn’t make him able to leap tall buildings in a single bound, it does enable him to hear through concrete and record missions in high-definition, even on the darkest nights.
+Last year the U.S. military paid over $85,000 to K9 Storm, a contractor in Winnipeg, Manitoba, Canada, for four tactical canine vests for the Navy\'s SEAL-dogs. K9 Storm has been gearing up war dogs since World War I.
+K9 Storm’s premier product is the Intruder. Intruder is tactical body armor for dogs, with a selling price of $20,000 to $30,000 apiece, depending on the version. It comes wired with a collapsible video arm, two way-audio and other super-secret gadgets that civilians can only speculate about.
+What is known, is that with the camera mounted on the dog’s back, his handlers, using handheld devices, see what the dogs sees.
+The canine tactical assault vests for these wonder dogs weighs in at just three to five pounds.
+Since, communication is key for the relationship with the K9 and his warrior, these “dogs of war” are trained one-on-one; one dog, one warrior and the bond with the two is closer than that of Batman and Robin.
+It is well documented throughout the course of history that man\'s best friend is a fearsome warrior and loyal companion. Dogs have sacrificed their lives to save their soldier and no doubt more than one warfighter has given his life to save his dog.
+SEAL-dogs are trained to work on land, in the air, and according to reports, underwater. Their doggie-armor is waterproof.
+Navy SEALS aren’t the only Special Forces teams to use the specialized body armor for their K9 partners. Similar gear is used for military working dogs around the world.
+So what is the value of a super-hero SEAL-dog? The answer, of course, is priceless.</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_restart">Restart</string>
+    <string name="menu_checkin">Check-In</string>
+    <string name="title_activity_main">Fingi</string>
+
+    <!-- PRELOADING -->
+    <string name="preloading_loading">Loading &#8230;</string>
+    <string name="preloading_checking">Checking &#032;</string>
+    <string name="preloading_configuration">Configuration</string>
+    <string name="preloading_service_start">Service Start</string>
+
+    <!-- HOME -->
+    <string name="home_reconnect">Reconnect</string>
+    <string name="home_connecting">Connecting &#8230;</string>
+    <string name="restart_application">Do you want to restart the application?</string>
+
+    <!-- DIALOG -->
+    <string name="dialog_password_hint">Password</string>
+    <string name="dialog_dial">Dial</string>
+    <string name="dialog_application">App</string>
+    <string name="dialog_activity">Go to</string>
+    <string name="dialog_delete">Delete</string>
+    <string name="dialog_access_settings">Please enter your password</string>
+
+    <!-- COMMUNICATION -->
+    <string name="communication_title_phone">Phone</string>
+    <string name="communication_title_message">Messages</string>
+    <string name="communication_title_calllogs">Call Logs</string>
+    <string name="communication_title_contacts">Contacts</string>
+    <string name="communication_title_applications">Applications</string>
+    <string name="communication_title_wifi">Wifi</string>
+    <string name="communication_title_connection">Hot Spot</string>
+    <string name="communication_title_information">Info</string>
+    <string name="communication_dial">Dial</string>
+    <string name="communication_dial_cancel">Cancel</string>
+    <string name="communication_dial_confirmation">Do you want to dial this number?</string>
+    <string name="communication_dial_confirmation_anything_anytime">Do you want to Call Anything Anytime?</string>
+    <string name="communication_login_back">Back</string>
+    <string name="communication_login_description">Please Contact xxx</string>
+    <string name="communication_connection_hotspot">Hot Spot</string>
+    <string name="communication_connection_hotspot_description">Connect to the internet anywhere anytime with the unlimited 3G access.  The Fingi phone can also be used as a Wi-Fi hot spot to connect any Wi-Fi devices.  Click on the button below and then connect to the SSID with password displayed below (takes about 10 seconds to activate).</string>
+    <string name="communication_connection_hotspot_description_sub">Turn off hot spot when not in use as it consumes additional power.</string>
+    <string name="communication_connection_hotspot_activate">Turn On Hotspot</string>
+    <string name="communication_connection_hotspot_deactivate">Turn Off Hotspot</string>
+    <string name="communication_connection_wifi">Wifi</string>
+    <string name="communication_connection_wifi_description">Press on Wifi icon to activate or deactivate your wifi.</string>
+    <string name="communication_connection_mobile">Mobile</string>
+    <string name="communication_connection_mobile_description">Press on Mobile icon to activate or deactivate your mobile data connection.</string>
+    <string name="communication_phone_title">Fingi Phone</string>
+    <string name="communication_phone_description">Fingi provides low cost calls anywhere anytime; inside the hotel or around town.  Local calls cost 3 baht (US $0.10) per min and international calls to most countries are 3 to 6 baht per minute.  To dial internationally, dial full number with country code.</string>
+    <string name="communication_phone_description_sub">All calls are charged a 2 baht connection charge.  All prices are exclusive of VAT and service charges.</string>
+    <string name="communication_phone_opendialer">Open Dialer</string>
+    <string name="communication_phone_callfrontdesk">Call Anything Anytime</string>
+    <string name="communication_phone_view_call_rate">View Call Rate</string>
+    <string name="communication_info_title">Info</string>
+    <string name="communication_info_description">Fingi is your room phone allowing you to make and receive calls anywhere anytime. \n\nDial room number to be reached anywhere in the hotel or outside. \n\nUnanswered calls will go to voicemail that can be retrieved from your room phone.</string>
+    <string name="communication_info_subdescription"></string>
+    <string name="communication_info_callfrontdesk">Call Anything Anytime</string>
+    <string name="communication_message_title">Messages</string>
+    <string name="communication_message_date">Date</string>
+    <string name="communication_message_from">From</string>
+    <string name="communication_message_detail">Detail</string>
+    <string name="communication_message_button_delete">Delete</string>
+    <string name="communication_message_button_cancel">Cancel</string>
+
+    <!-- BOOKING Meeting -->
+    <string name="booking_meeting_register_username">Username :</string>
+    <string name="booking_meeting_register_password">Password :</string>
+    <string name="booking_meeting_register_password_confirm">Confirm :</string>
+    <string name="booking_meeting_register_firstname">First name :</string>
+    <string name="booking_meeting_register_lastname">Last name :</string>
+    <string name="booking_meeting_register_email">Email :</string>
+    <string name="booking_meeting_register_register">Register</string>
+    <string name="booking_meeting_register_password_hint">Fill Password</string>
+    <string name="booking_meeting_register_password_confirm_hint">Fill Confirm Password</string>
+    <string name="booking_meeting_register_specialchar">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_.0123456789</string>
+    <string name="booking_meeting_register_specialchar_hint">[a#8211;z] [A#8211;Z] [0#8211;9] [._]</string>
+    <string name="booking_meeting_login">Login</string>
+    <string name="booking_meeting_login_username">Username :</string>
+    <string name="booking_meeting_login_password">Password :</string>
+    <string name="booking_meeting_login_username_hint">Fill Username</string>
+    <string name="booking_meeting_login_password_hint">Fill Password</string>
+    <string name="booking_meeting_room_name">room name</string>
+    <string name="booking_meeting_room_detail">room detail</string>
+    <string name="booking_meeting_room_list_select">Select DateTime</string>
+
+    <!-- SERVICES -->
+    <string name="service_password">Password</string>
+    <string name="service_password_wrong">Wrong Password</string>
+    <string name="service_enter">Enter</string>
+    <string name="service_cancel">Cancel</string>
+    <string name="service_secure_description">You must fill in information to access this section.</string>
+
+    <!-- images -->
+    <string name="empty_description"></string>
+
+    <!-- CUSTOMER -->
+    <string name="customer_taxi_card">Taxi Card</string>
+
+    <!-- GUEST -->
+    <string name="guest_checkout">CHECKOUT</string>
+    <string name="guest_unregister">UNREGISTER</string>
+
+    <!-- ROOMCONTROL -->
+    <string name="roomcontrol_light">Lights</string>
+    <string name="roomcontrol_temperature">Air Con</string>
+    <string name="roomcontrol_mood">Moods</string>
+    <string name="roomcontrol_curtain">Curtains</string>
+
+    <!-- TEMPERATURE -->
+    <string name="roomcontrol_temperature_power">Power</string>
+    <string name="roomcontrol_temperature_fan">Fan</string>
+    <string name="roomcontrol_temperature_setpoint">Set</string>
+    <string name="roomcontrol_temperature_title">Temperature</string>
+    <string name="roomcontrol_temperature_degree">24</string>
+    <string name="roomcontrol_temperature_celcius">&#xb0;C</string>
+    <string name="roomcontrol_temperature_fan_speed_low">Low</string>
+    <string name="roomcontrol_temperature_fan_speed_medium">Medium</string>
+    <string name="roomcontrol_temperature_fan_speed_high">High</string>
+    <string name="roomcontrol_temperature_fan_speed_auto">Auto</string>
+    <string name="roomcontrol_temperature_current">Current Room Temperature :</string>
+    <string name="roomcontrol_temperature_select_fan_speed">Select your fan speed :</string>
+    <string name="roomcontrol_temperature_temp">Temp</string>
+
+    <!-- MOOD -->
+    <string name="roomcontrol_mood_confirmed">Do you want to apply this mood?</string>
+    <string name="roomcontrol_mood_dialog_button_ok">OK</string>
+    <string name="roomcontrol_mood_dialog_button_cancel">Cancel</string>
+
+    <!-- CURTAIN -->
+    <string name="roomcontrol_curtain_open">Open</string>
+    <string name="roomcontrol_curtain_stop">Stop</string>
+    <string name="roomcontrol_curtain_close">Close</string>
+
+    <!-- ENTERTAINMENT -->
+    <string name="entertainment_tv">TV Guide</string>
+    <string name="entertainment_appletv">Apple TV</string>
+    <string name="entertainment_remote">TV Remote</string>
+    <string name="entertainment_dvdremote">DVD Remote</string>
+    <string name="entertainment_switch">Switch</string>
+
+    <!-- ENTERTAINMENT: APPLE TV -->
+    <string name="entertainment_appletv_description">Apple TV gives you access to movies, tv shows, music and more.
+Press menu to get started. You may also play content from your Apple device using Airplay.</string>
+    <string name="entertainment_appletv_password">Password:</string>
+    <string name="entertainment_tvguide_epg_information_not_available">Information not available</string>
+
+    <!-- ENTERTAINMENT: Switch -->
+    <string name="entertainment_switch_livingroom">Living Room</string>
+    <string name="entertainment_switch_bedroom">Bedroom</string>
+
+    <!-- TV GUIDE -->
+    <string name="entertainment_tv_channel_select_by_genre">Select by genre</string>
+    <string name="entertainment_tv_channel_group_all">All</string>
+    <string name="entertainment_tv_program_current">Now:</string>
+    <string name="entertainment_tv_program_next">Coming up:</string>
+
+    <!-- APPLICATION -->
+    <string name="application_category_web">Web</string>
+    <string name="application_category_social">Social</string>
+    <string name="application_category_tool">Tools</string>
+    <string name="application_category_local">Local</string>
+    <string name="application_category_game">Games</string>
+
+    <!-- LIGHTS -->
+    <string name="light_dnd">DND</string>
+
+    <!-- SOCKET -->
+    <string name="socket_status_disconnect">dis</string>
+    <string name="socket_status_connected">ok</string>
+    <string name="socket_status_reconnecting">recon</string>
+    <string name="socket_status_frcd_down">frcd</string>
+    <string name="socket_status_online">online</string>
+    <string name="socket_status_offline">offline</string>
+
+    <!-- TOOL -->
+    <string name="tool_datawipe_wipe">Wipe</string>
+    <string name="tool_datawipe_clear">Clear your data</string>
+    <string name="tool_datawipe_description">For your security and privacy, you may delete all data from the phone at anytime. This includes:\n- Application data\n- Browser data (including cookies)\n- Photos and videos\n- Call logs, contacts and messages\n- Calendar events and alarms\n- Any other personal data\nWe do not store or maintain any of this data, and once wiped, it can not be recovered.\nAll info will automatically be wiped at checkout.</string>
+
+    <!-- SERVICE -->
+    <string name="fingi_service_start">Starting service</string>
+    <string name="fingi_service_checkin_complete">Check-In Complete</string>
+
+    <!-- MY FINGI -->
+    <string name="myfingi_privacy_description">We take the issue privacy very seriously, and know how important .  We understand that for convenience you may want to store certain passwords for applications, but rest assured that this information is secure on your phone and is wiped out instantly at check out.  Please see data wipe section for more information.</string>
+    <string name="myfingi_applewipe_description">Apple TV Wipe</string>
+    <string name="myfingi_applewipe_clear">Clear Apple TV data</string>
+    <string name="myfingi_preference_button_add">Add</string>
+    <string name="myfingi_preference_button_remove">Remove</string>
+
+</resources>
