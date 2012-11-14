@@ -9,6 +9,8 @@ import org.json.JSONObject;
 
 import com.bomzaiya.app.idang.story.StoryActivity;
 import com.bomzaiya.system.SystemHelper;
+import com.bomzaiya.ui.IdangFragment;
+import com.bomzaiya.ui.IdangFragmentActivity;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar.LayoutParams;

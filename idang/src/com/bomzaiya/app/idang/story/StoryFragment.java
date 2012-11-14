@@ -10,13 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.bomzaiya.app.idang.IdangFragment;
-import com.bomzaiya.app.idang.IdangFragmentActivity;
 import com.bomzaiya.app.idang.ProductConfig;
 import com.bomzaiya.app.idang.R;
 import com.bomzaiya.system.SystemHelper;
+import com.bomzaiya.ui.IdangFragment;
+import com.bomzaiya.ui.IdangFragmentActivity;
 
 public class StoryFragment extends IdangFragment {
   protected static final String HOME_ACTIVITY_LOG_BUTTON = "HOME_ACTIVITY_LOG_BUTTON";

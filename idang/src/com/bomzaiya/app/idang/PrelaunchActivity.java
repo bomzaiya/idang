@@ -1,6 +1,9 @@
 package com.bomzaiya.app.idang;
 
 
+import com.bomzaiya.ui.IdangFragmentActivity;
+import com.bomzaiya.ui.LayoutDefinition;
+
 import android.os.Bundle;
 
 public class PrelaunchActivity extends IdangFragmentActivity {
@@ -10,7 +13,6 @@ public class PrelaunchActivity extends IdangFragmentActivity {
     super.onCreate(savedInstanceState);
 
     onCreateLayout(LayoutDefinition.LAYOUT_TYPE_IDANG_PRELOADING);
-    // setContentView(R.layout.idang_page_fullscreen);
     
     IdangActivity.start(getBaseContext());
     finish();

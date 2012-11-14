@@ -23,7 +23,6 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.SystemClock;
 
-import com.bomzaiya.app.idang.IdangApplication;
 import com.bomzaiya.app.idang.ProductConfig;
 import com.bomzaiya.internet.InternetHelper;
 import com.bomzaiya.internet.OnAdminCommandListener;
@@ -32,6 +31,7 @@ import com.bomzaiya.internet.OnSocketServiceListener;
 import com.bomzaiya.internet.OnWifiListener;
 import com.bomzaiya.internet.SocketHelper;
 import com.bomzaiya.system.SystemHelper;
+import com.bomzaiya.ui.IdangApplication;
 
 public class SocketService extends Service implements OnSocketServiceListener, OnSocketListener, OnWifiListener {
 
@@ -220,10 +220,12 @@ public class SocketService extends Service implements OnSocketServiceListener, O
   }
 
   class MyClient implements Runnable {
-
+    
+    private int mPortIndex = 0;
     @Override
     public void run() {
-      int port = mProductConfig.getSocketPort();
+      int port = ProductConfig.mPortList.get(mPortIndex);
+      mPortIndex++;
 
       InetAddress serverAddr;
       boolean disconnect = false;

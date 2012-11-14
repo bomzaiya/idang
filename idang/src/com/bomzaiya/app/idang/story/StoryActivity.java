@@ -14,9 +14,9 @@ import android.support.v4.view.ViewPager;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
-import com.bomzaiya.app.idang.IdangFragmentActivity;
-import com.bomzaiya.app.idang.LayoutDefinition;
 import com.bomzaiya.app.idang.R;
+import com.bomzaiya.ui.IdangFragmentActivity;
+import com.bomzaiya.ui.LayoutDefinition;
 
 public class StoryActivity extends IdangFragmentActivity {
 

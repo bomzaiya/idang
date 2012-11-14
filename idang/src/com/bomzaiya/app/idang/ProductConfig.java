@@ -168,19 +168,16 @@ public class ProductConfig {
   public static SparseArray<Integer> mPortList = new SparseArray<Integer>();
 
   static {
-    mPortList.put(0, 20080);
-    mPortList.put(1, 20080);
-    mPortList.put(2, 30080);
-    mPortList.put(3, 30080);
+    mPortList.put(0, 40081);
+    mPortList.put(1, 40082);
+    mPortList.put(2, 40083);
+    mPortList.put(3, 40084);
   };
 
   public static SparseArray<String> mHostList = new SparseArray<String>();
 
   static {
-    mHostList.put(SITE_IDANG, "test.IDANG.com");
-    mHostList.put(SITE_DEMO, "demo.IDANG.com");
-    mHostList.put(SITE_ALOFT, "aloft.IDANG.com");
-    mHostList.put(SITE_GLOWFISH, "glowfish.IDANG.com");
+    mHostList.put(SITE_IDANG, "test.fingi.com");
   };
 
   public ProductConfig(Context context) {
