@@ -177,7 +177,7 @@ public class ProductConfig {
   public static SparseArray<String> mHostList = new SparseArray<String>();
 
   static {
-    mHostList.put(SITE_IDANG, "test.fingi.com");
+    mHostList.put(SITE_IDANG, "192.168.70.151");
   };
 
   public ProductConfig(Context context) {
