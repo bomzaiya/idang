@@ -45,14 +45,7 @@ public abstract class IdangFragmentActivity extends SherlockFragmentActivity imp
 
   private static final String RESTART_APPLICATION_TAG = "RESTART_APPLICATION_TAG";
 
-  private static final int COMMAND_PRIVACY_LIGHT = 1;
 
-  // private QuickLauncher mQuickLauncher;
-  private TextView mTvWifiSignal;
-  // private DigitalClock mDcClock;
-  // private TextView mTvPhoneSignal;
-
-  private TextView mTvBatteryLevel;
   private int mLayoutType;
   private TextView mTvSocketStatus;
   private ActionBar mActionBar;
@@ -82,6 +75,8 @@ public abstract class IdangFragmentActivity extends SherlockFragmentActivity imp
   protected ArrayList<TabView> mTabViewList;
 
   protected ProductConfig mProductConfig;
+  
+  protected IdangApplication mApplication = null;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -91,12 +86,12 @@ public abstract class IdangFragmentActivity extends SherlockFragmentActivity imp
     String locale = SystemHelper.getSharePreferenceValue(getBaseContext(), ProductConfig.PREF_USER_LANGUAGE);
     SystemHelper.changeLocale(getBaseContext(), locale);
 
-    IdangApplication app = (IdangApplication) getApplication();
-    mProductConfig = app.getProductConfig();
+    mApplication = (IdangApplication) getApplication();
+    mProductConfig = mApplication.getProductConfig();
 
     if (mProductConfig == null) {
       mProductConfig = new ProductConfig(getBaseContext());
-      app.setProductConfig(mProductConfig);
+      mApplication.setProductConfig(mProductConfig);
     }
   }
 
@@ -611,19 +606,6 @@ public abstract class IdangFragmentActivity extends SherlockFragmentActivity imp
     // configureHeader();
     // }
 
-    // show the latest status from the phone
-    String room = getSharePreferenceValue(ProductConfig.PREF_USER_ROOM_NUMBER);
-    String phone_status = getSharePreferenceValue(ProductConfig.PREF_USER_PHONE_STATUS);
-
-    if (room.equals(ProductConfig.ROOM_NONE) || room == null || room.equals(ProductConfig.ROOM_CHECKOUT)) {
-      String phoneStatus = getString(R.string.guest_checkout);
-      if (phone_status.equals(ProductConfig.PHONE_STATUS_UNREGISTER)) {
-        phoneStatus = getString(R.string.guest_unregister);
-      }
-      setHeaderTitle(phoneStatus);
-    } else {
-      setHeaderTitle("");
-    }
   }
 
   /**

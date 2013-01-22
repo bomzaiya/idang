@@ -11,10 +11,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
-import com.bomzaiya.service.SocketService;
 import com.bomzaiya.ui.IdangFragmentActivity;
 import com.bomzaiya.ui.LayoutDefinition;
 
@@ -27,6 +27,7 @@ public class IdangActivity extends IdangFragmentActivity {
   }
 
   private ViewPager mPager;
+
   public static Intent mSocketService = null;
 
   @Override
@@ -34,24 +35,15 @@ public class IdangActivity extends IdangFragmentActivity {
     super.onCreate(savedInstanceState);
     onCreateLayout(LayoutDefinition.LAYOUT_TYPE_IDANG_HOME);
     createHomePager();
+    Log.d("start_idang", "asdfsafsdf");
 
-    if (mSocketService != null) {
-      stopService(mSocketService);
-      mSocketService = null;
-    }
-    if (mSocketService == null) {
-      mSocketService = new Intent(getBaseContext(), SocketService.class);
-      startService(mSocketService);
-    }
+    mApplication.startIdangService();
   }
-  
+
   @Override
   public void onStop() {
     super.onStop();
-    if (mSocketService != null) {
-      stopService(mSocketService);
-      mSocketService = null;
-    }
+    mApplication.unbindIdangService();
   }
 
   class MyFragmentAdapter extends FragmentPagerAdapter implements ViewPager.OnPageChangeListener, ActionBar.TabListener {
