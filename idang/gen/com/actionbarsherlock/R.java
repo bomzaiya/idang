@@ -131,16 +131,16 @@ public final class R {
 		public static final int abs__bright_foreground_holo_light = 0x7f060003;
 		public static final int abs__primary_text_holo_dark = 0x7f06000a;
 		public static final int abs__primary_text_disable_only_holo_dark = 0x7f060009;
+		public static final int abs__bright_foreground_disabled_holo_light = 0x7f060005;
 		public static final int abs__bright_foreground_disabled_holo_dark = 0x7f060004;
 		public static final int abs__background_holo_light = 0x7f060001;
-		public static final int abs__bright_foreground_disabled_holo_light = 0x7f060005;
 		public static final int abs__bright_foreground_inverse_holo_dark = 0x7f060006;
 		public static final int abs__primary_text_holo_light = 0x7f06000b;
 		public static final int abs__background_holo_dark = 0x7f060000;
 	}
 	public static final class string {
-		public static final int abs__activitychooserview_choose_application = 0x7f090007;
 		public static final int abs__action_bar_up_description = 0x7f090001;
+		public static final int abs__activitychooserview_choose_application = 0x7f090007;
 		public static final int abs__share_action_provider_share_with = 0x7f090006;
 		public static final int abs__action_menu_overflow_description = 0x7f090002;
 		public static final int abs__action_mode_done = 0x7f090003;
@@ -333,9 +333,9 @@ public final class R {
 		public static final int abs__spinner_48_inner_holo = 0x7f020023;
 		public static final int abs__list_focused_holo = 0x7f020017;
 		public static final int abs__tab_selected_holo = 0x7f02002c;
+		public static final int abs__cab_background_bottom_holo_dark = 0x7f02000c;
 		public static final int abs__btn_cab_done_pressed_holo_dark = 0x7f02000b;
 		public static final int abs__ab_transparent_dark_holo = 0x7f020006;
-		public static final int abs__cab_background_bottom_holo_dark = 0x7f02000c;
 		public static final int abs__ic_ab_back_holo_dark = 0x7f02000f;
 		public static final int abs__progress_primary_holo_dark = 0x7f020021;
 		public static final int abs__ic_menu_share_holo_dark = 0x7f020013;
@@ -350,8 +350,8 @@ public final class R {
 		public static final int abs__spinner_ab_holo_dark = 0x7f020028;
 		public static final int abs__tab_selected_focused_holo = 0x7f02002b;
 		public static final int abs__tab_indicator_ab_holo = 0x7f02002a;
-		public static final int abs__list_longpressed_holo = 0x7f020018;
 		public static final int abs__ic_menu_moreoverflow_holo_dark = 0x7f020011;
+		public static final int abs__list_longpressed_holo = 0x7f020018;
 		public static final int abs__btn_cab_done_default_holo_dark = 0x7f020008;
 	}
 	public static final class attr {
@@ -451,8 +451,8 @@ public final class R {
 		public static final int abs__dialog_min_width_minor = 0x7f07000a;
 		public static final int abs__dialog_min_width_major = 0x7f070009;
 		public static final int abs__action_bar_icon_vertical_padding = 0x7f070002;
-		public static final int abs__action_button_min_width = 0x7f070007;
 		public static final int abs__action_bar_subtitle_top_margin = 0x7f070005;
+		public static final int abs__action_button_min_width = 0x7f070007;
 		public static final int abs__alert_dialog_title_height = 0x7f070008;
 		public static final int abs__action_bar_subtitle_bottom_margin = 0x7f070006;
 		public static final int action_button_min_width = 0x7f07000b;

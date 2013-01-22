@@ -19,6 +19,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.params.ConnManagerPNames;
 import org.apache.http.conn.params.ConnPerRouteBean;
@@ -57,12 +58,15 @@ public class HttpWebWriter {
   public void setSSL(String domain, String username, String password) {
     // self-signed certificate
     SchemeRegistry schemeRegistry = new SchemeRegistry();
-    schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-    schemeRegistry.register(new Scheme("https", new EasySSLSocketFactory(), 443));
+    schemeRegistry.register(new Scheme("http", PlainSocketFactory
+        .getSocketFactory(), 80));
+    schemeRegistry
+        .register(new Scheme("https", new EasySSLSocketFactory(), 443));
 
     BasicHttpParams params = new BasicHttpParams();
     params.setParameter(ConnManagerPNames.MAX_TOTAL_CONNECTIONS, 1);
-    params.setParameter(ConnManagerPNames.MAX_CONNECTIONS_PER_ROUTE, new ConnPerRouteBean(1));
+    params.setParameter(ConnManagerPNames.MAX_CONNECTIONS_PER_ROUTE,
+        new ConnPerRouteBean(1));
     params.setParameter(HttpProtocolParams.USE_EXPECT_CONTINUE, false);
 
     HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
@@ -71,8 +75,11 @@ public class HttpWebWriter {
 
     CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
 
-    credentialsProvider.setCredentials(new AuthScope(domain, AuthScope.ANY_PORT), new UsernamePasswordCredentials(username, password));
-    ThreadSafeClientConnManager clientConnectionManager = new ThreadSafeClientConnManager(params, schemeRegistry);
+    credentialsProvider.setCredentials(
+        new AuthScope(domain, AuthScope.ANY_PORT),
+        new UsernamePasswordCredentials(username, password));
+    ThreadSafeClientConnManager clientConnectionManager = new ThreadSafeClientConnManager(
+        params, schemeRegistry);
 
     // connection (client has to be created for every new connection)
     mHttpClient = new DefaultHttpClient(clientConnectionManager, params);
@@ -85,7 +92,8 @@ public class HttpWebWriter {
    * @param json
    * @param onHttpWebListener
    */
-  public void executePost(String serverPath, JSONObject json, final OnHttpWebListener onHttpWebListener) {
+  public void executePost(String serverPath, JSONObject json,
+      final OnHttpWebListener onHttpWebListener) {
     HttpPost post = new HttpPost(serverPath);
     try {
       post.setEntity(new StringEntity(json.toString(), "UTF8"));
@@ -94,12 +102,14 @@ public class HttpWebWriter {
       // e.printStackTrace();
     }
     // set this to avoid 417 error (Expectation Failed)
-    post.getParams().setBooleanParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE, false);
+    post.getParams().setBooleanParameter(
+        CoreProtocolPNames.USE_EXPECT_CONTINUE, false);
     try {
       mHttpClient.execute(post, new ResponseHandler<String>() {
 
         @Override
-        public String handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
+        public String handleResponse(HttpResponse response)
+            throws ClientProtocolException, IOException {
           boolean error = false;
           HttpEntity entity = response.getEntity();
           InputStream content = null;
@@ -107,7 +117,8 @@ public class HttpWebWriter {
           try {
             content = entity.getContent();
 
-            InputStreamReader streamReader = new InputStreamReader(content, "UTF-8");
+            InputStreamReader streamReader = new InputStreamReader(content,
+                "UTF-8");
             buffer = new StringBuilder();
             try {
               char[] tmp = new char[1024];
@@ -129,13 +140,15 @@ public class HttpWebWriter {
             JSONObject jso = null;
             try {
               jso = new JSONObject(buffer.toString());
-              onHttpWebListener.onJSONReceive(jso, OnHttpWebListener.JSON_OBJECT);
+              onHttpWebListener.onJSONReceive(jso,
+                  OnHttpWebListener.JSON_OBJECT);
             } catch (JSONException e) {
               // it is not json object, so try array
               JSONArray jsoArray = null;
               try {
                 jsoArray = new JSONArray(buffer.toString());
-                onHttpWebListener.onJSONReceive(jsoArray, OnHttpWebListener.JSON_ARRAY);
+                onHttpWebListener.onJSONReceive(jsoArray,
+                    OnHttpWebListener.JSON_ARRAY);
               } catch (JSONException e1) {
               }
             }
@@ -159,26 +172,30 @@ public class HttpWebWriter {
    * @param json
    * @param onHttpWebListener
    */
-  public void executePost(String serverPath, ArrayList<NameValuePair> nvpsList, final OnHttpWebListener onHttpWebListener) {
+  public void executePost(String serverPath, ArrayList<NameValuePair> nvpsList,
+      final OnHttpWebListener onHttpWebListener) {
     HttpPost post = new HttpPost(serverPath);
     try {
       post.setEntity(new UrlEncodedFormEntity(nvpsList, HTTP.UTF_8));
     } catch (UnsupportedEncodingException e) {
     }
     // set this to avoid 417 error (Expectation Failed)
-    post.getParams().setBooleanParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE, false);
+    post.getParams().setBooleanParameter(
+        CoreProtocolPNames.USE_EXPECT_CONTINUE, false);
     try {
       mHttpClient.execute(post, new ResponseHandler<String>() {
 
         @Override
-        public String handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
+        public String handleResponse(HttpResponse response)
+            throws ClientProtocolException, IOException {
           HttpEntity entity = response.getEntity();
           InputStream content = null;
           StringBuilder buffer = null;
           try {
             content = entity.getContent();
 
-            InputStreamReader streamReader = new InputStreamReader(content, "UTF-8");
+            InputStreamReader streamReader = new InputStreamReader(content,
+                "UTF-8");
             buffer = new StringBuilder();
             try {
               char[] tmp = new char[1024];
@@ -203,7 +220,8 @@ public class HttpWebWriter {
             JSONArray jsoArray = null;
             try {
               jsoArray = new JSONArray(buffer.toString());
-              onHttpWebListener.onJSONReceive(jsoArray, OnHttpWebListener.JSON_ARRAY);
+              onHttpWebListener.onJSONReceive(jsoArray,
+                  OnHttpWebListener.JSON_ARRAY);
             } catch (JSONException e1) {
             }
           }
@@ -216,7 +234,74 @@ public class HttpWebWriter {
 
   }
 
-  public void executeMultipartPost(String serverPath, String filePath, boolean compress) throws Exception {
+  /**
+   * execute post with name value pairs
+   * 
+   * @param serverPath
+   * @param json
+   * @param onHttpWebListener
+   */
+  public void executeGet(String serverPath,
+      final OnHttpWebListener onHttpWebListener) {
+    HttpGet get = new HttpGet(serverPath);
+
+    // set this to avoid 417 error (Expectation Failed)
+    get.getParams().setBooleanParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE,
+        false);
+    try {
+      mHttpClient.execute(get, new ResponseHandler<String>() {
+
+        @Override
+        public String handleResponse(HttpResponse response)
+            throws ClientProtocolException, IOException {
+          HttpEntity entity = response.getEntity();
+          InputStream content = null;
+          StringBuilder buffer = null;
+          try {
+            content = entity.getContent();
+
+            InputStreamReader streamReader = new InputStreamReader(content,
+                "UTF-8");
+            buffer = new StringBuilder();
+            try {
+              char[] tmp = new char[1024];
+              int l;
+              while ((l = streamReader.read(tmp)) != -1) {
+                buffer.append(tmp, 0, l);
+              }
+            } finally {
+              streamReader.close();
+            }
+            content.close();
+          } catch (IllegalStateException e1) {
+          } catch (IOException e1) {
+          }
+
+          JSONObject jso = null;
+          try {
+            jso = new JSONObject(buffer.toString());
+            onHttpWebListener.onJSONReceive(jso, OnHttpWebListener.JSON_OBJECT);
+          } catch (JSONException e) {
+            // it is not json object, so try array
+            JSONArray jsoArray = null;
+            try {
+              jsoArray = new JSONArray(buffer.toString());
+              onHttpWebListener.onJSONReceive(jsoArray,
+                  OnHttpWebListener.JSON_ARRAY);
+            } catch (JSONException e1) {
+            }
+          }
+          return "";
+        }
+      });
+    } catch (ClientProtocolException e) {
+    } catch (IOException e) {
+    }
+
+  }
+
+  public void executeMultipartPost(String serverPath, String filePath,
+      boolean compress) throws Exception {
 
     Bitmap bitmapOrg = null;
     ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -225,7 +310,8 @@ public class HttpWebWriter {
 
       File imageFile = new File(filePath);
       ExifInterface exif = new ExifInterface(imageFile.getAbsolutePath());
-      int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+      int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION,
+          ExifInterface.ORIENTATION_NORMAL);
 
       int rotate = 0;
       int newRotate = 0;
@@ -269,7 +355,8 @@ public class HttpWebWriter {
           }
 
           // recreate the new Bitmap
-          Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width, height, matrix, true);
+          Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width,
+              height, matrix, true);
 
           resizedBitmap.compress(CompressFormat.JPEG, 75, bos);
         } else {
@@ -281,7 +368,8 @@ public class HttpWebWriter {
               matrix.postRotate(newRotate);
             }
             // recreate the new Bitmap
-            Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width, height, matrix, true);
+            Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width,
+                height, matrix, true);
             resizedBitmap.compress(CompressFormat.JPEG, 75, bos);
           } else {
             bitmapOrg.compress(CompressFormat.JPEG, 75, bos);
@@ -296,7 +384,8 @@ public class HttpWebWriter {
             matrix.postRotate(newRotate);
           }
           // recreate the new Bitmap
-          Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width, height, matrix, true);
+          Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width,
+              height, matrix, true);
           resizedBitmap.compress(CompressFormat.JPEG, 75, bos);
         } else {
           bitmapOrg.compress(CompressFormat.JPEG, 75, bos);
@@ -315,12 +404,14 @@ public class HttpWebWriter {
       byte[] data = bos.toByteArray();
       HttpPost postRequest = new HttpPost(serverPath);
       ByteArrayBody bab = new ByteArrayBody(data, fileName);
-      MultipartEntity reqEntity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
+      MultipartEntity reqEntity = new MultipartEntity(
+          HttpMultipartMode.BROWSER_COMPATIBLE);
       reqEntity.addPart("file_upload", bab);
       reqEntity.addPart("photoCaption", new StringBody("sfsdfsdf"));
       postRequest.setEntity(reqEntity);
       HttpResponse response = mHttpClient.execute(postRequest);
-      BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
+      BufferedReader reader = new BufferedReader(new InputStreamReader(response
+          .getEntity().getContent(), "UTF-8"));
       String sResponse;
       StringBuilder s = new StringBuilder();
 
